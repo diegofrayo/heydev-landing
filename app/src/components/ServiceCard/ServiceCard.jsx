@@ -16,7 +16,7 @@ class ServiceCard extends Component {
                 style={{
                     cursor: 'pointer',
                     height: '85%',
-                    margin: 'auto 65px',
+                    margin: 'auto 60px',
                     display: 'flex',
                     flex:1,
                     justifyContent: 'center',

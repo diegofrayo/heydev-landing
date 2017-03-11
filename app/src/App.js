@@ -27,7 +27,7 @@ class App extends Component {
             </Box>
           </PageSection>
           <PageSection col>
-            <Box flexed center middle style={{ backgroundColor: '#F0F0F0', color: '#bdbdbd', fontSize: 28 }}>
+            <Box center middle style={{ height: 120 ,backgroundColor: '#F0F0F0', color: '#bdbdbd', fontSize: 28 }}>
               This can be a useful title.
             </Box>
             <CatalogServiceSlider />
