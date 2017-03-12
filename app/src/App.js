@@ -1,40 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Link, Route } from 'react-router-dom'
 import PageSection from './components/PageSection/PageSection';
 import Box from './components/FXBox/Box';
-import Header from './components/Header/Header';
-import Banner from './components/Banner/Banner';
-import CatalogServiceSlider from './components/CatalogServiceSlider/CatalogServiceSlider';
+import OurServicesPage from './containers/ourServices/OurServicesPage';
+import HomePage from './containers/Home/HomePage';
+import OurProfile from './containers/OurProfile/OurProfile';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
         <div>
-          <PageSection col>
-            <header>
-              <Box middle center style={{ height: 50, backgroundColor: 'white'}} />
-            </header>
-            <Box flexed col style={{ backgroundColor: '#ebebeb' }}>
-              <Box flexed center bottom style={{ fontSize: 28, padding: 8, color: "#bdbdbd" }}>
-                Some dummy text that we need to display.
-              </Box>
-              <Box flexed center style={{ padding: 8 }}>
-                <Box center middle style={{ height: 35, width: 150, backgroundColor: '#bdbdbd', color: '#f1f1f1' }}>
-                  dummy button
-                </Box>
-              </Box>
+            <Box middle center style={{ position: 'fixed', width: '100%', height: 50, backgroundColor: 'white'}} >
+                <Link to="/">Home</Link>
+                <Link to="/services"> &nbsp;|&nbsp;services</Link>
+                <Link to="/profile">&nbsp;|&nbsp; profile</Link>
             </Box>
-          </PageSection>
-          <PageSection col>
-            <Box center middle style={{ height: 120 ,backgroundColor: '#F0F0F0', color: '#bdbdbd', fontSize: 28 }}>
-              This can be a useful title.
-            </Box>
-            <CatalogServiceSlider />
-            <Box flexed center middle style={{ backgroundColor: 'white' }}>
-              possible tech stack or clients list
-            </Box>
-          </PageSection>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/services" component={OurServicesPage} />
+            <Route path="/profile" component={OurProfile} />
         </div>
     );
   }

@@ -23,7 +23,7 @@ class ServiceCard extends Component {
                     alignItems: 'center',
                     backgroundColor }}
             >
-                text
+                {this.props.children}
             </div>
         )
     }

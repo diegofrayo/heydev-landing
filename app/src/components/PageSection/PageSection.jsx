@@ -12,9 +12,9 @@ class PageSection extends Component {
         const flexDirection = this.props.col && 'column' || this.props.row && 'row';
 
         return(
-            <section style={{ display: 'flex', flex: 1, height: '100vh', flexDirection }}>
+            <div style={{ display: 'flex', flex: 1, height: '100vh', flexDirection }}>
                 {this.props.children}
-            </section>
+            </div>
         )
     }
 }

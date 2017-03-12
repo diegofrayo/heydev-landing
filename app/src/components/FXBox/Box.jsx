@@ -10,6 +10,7 @@ class Box extends Component {
         let justifyContent;
         let alignItems;
         let flexDirection;
+        let flexWrap;
 
         if (this.props.end) {
             justifyContent = 'flex-end';
@@ -41,6 +42,9 @@ class Box extends Component {
         if (this.props.row) {
             flexDirection = 'row'
         }
+        if (this.props.wrap) {
+            flexWrap = 'wrap'
+        }
 
         return (
             <div style={Object.assign({},
@@ -49,7 +53,8 @@ class Box extends Component {
                     flex: this.props.flexed && this.props.flexed ? 1 : 'none',
                     justifyContent,
                     alignItems,
-                    flexDirection
+                    flexDirection,
+                    flexWrap: flexWrap ? flexWrap : 'nowrap'
                 },
                 this.props.style && this.props.style
             )}>
