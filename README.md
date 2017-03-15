@@ -1,7 +1,7 @@
-# Quindio Workspace Landing Page (nothing fancy here)
+# Quindio Workspace Landing Page
 
 ### comandos basicos
 
-Build proyecto: 'gulp'
+Build proyecto: `gulp`
 
 Modo desarrollo: `gulp dev`
