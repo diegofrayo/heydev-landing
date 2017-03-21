@@ -1,9 +1,7 @@
-# Quindio Workspace Landing Page
+# Quindío Workspace Landing Page
 
-### comandos basicos
+### Comandos básicos
 
-instalar dependencias `npm i`
-
-Build proyecto: `gulp`
-
-Modo desarrollo: `gulp dev`
+- Instalar dependencias `npm i`
+- Activar modo desarrollo: `gulp dev`
+- Construir el proyecto: `gulp`
