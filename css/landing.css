@@ -1,6 +1,12 @@
+/*!
+ * Start Bootstrap - workspace landing page v1.0.0 ()
+ * Copyright 2013-2017 Workspace Quindío
+ * Licensed under MIT ()
+ */
 /*
 * Generic
 * Sections
+* - Navigation
 * - Header
 * - Services
 * - Contact
@@ -13,6 +19,21 @@
 }
 .section-heading {
   margin-top: 0;
+}
+#top-nav {
+  border: 0;
+  padding: 15px 40px;
+}
+#top-nav .navbar-brand {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2em;
+}
+.navbar-default.affix {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.navbar-default.affix .nav > li > a,
+.navbar-default.affix .nav > li > a:focus {
+  color: white;
 }
 header {
   -webkit-background-size: cover;

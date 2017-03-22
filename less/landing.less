@@ -4,6 +4,7 @@
 /*
 * Generic
 * Sections
+* - Navigation
 * - Header
 * - Services
 * - Contact
@@ -27,6 +28,25 @@
 
 
 // ********************** SECTIONS ************************** //
+// NAVIGATION
+#top-nav{
+	border: 0;
+	padding: 15px 40px;
+
+	.navbar-brand{
+		.serif-font;
+		font-size: 2em;
+	}
+}
+
+.navbar-default.affix{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-default.affix .nav>li>a, .navbar-default.affix .nav>li>a:focus{
+	color: white;
+}
+
 // HEADER
 header {
 	.background-cover;
