@@ -26,6 +26,10 @@ p, h1, h2, h3{
 	cursor: default;
 }
 
+span, img, i{
+	vertical-align: middle;
+}
+
 // -- Highlight Color Customization
 ::-moz-selection{
 	background: @gray-darker;
@@ -52,17 +56,23 @@ img::-moz-selection{
 
 
 // ********************** GENERIC ************************** //
-.call-to-action{
-	// margin: 0 60px;
-	// h2{
-	// 	margin: 0 auto 20px;
-	// }
-}
+// .call-to-action{
+// 	margin: 0 60px;
+// 	h2{
+// 		margin: 0 auto 20px;
+// 	}
+// }
 
 .section-heading{
 	font-weight: bold;
+	margin-bottom: 10px;
 	margin-top: 0;
 	text-transform: uppercase;
+
+	& + hr{
+		margin-bottom: 40px;
+		margin-top: 15px;
+	}
 }
 
 .bg-pattern-dark{
@@ -71,8 +81,9 @@ img::-moz-selection{
 }
 
 .bg-pattern-light{
-	background-image: url('/img/bg-patterns/light.png');
-	background-repeat: repeat;
+	// background-image: url('/img/bg-patterns/light.png');
+	// background-repeat: repeat;
+	background-color: white;
 }
 
 
@@ -81,24 +92,57 @@ img::-moz-selection{
 // Navigation
 #top-nav{
 	border: 0;
-	padding: 15px 40px;
 
+	// ws title
 	.navbar-brand{
 		.serif-font;
-		font-size: 2em;
+	}
+
+
+	@media screen and (min-width : 992px){
+		padding: 15px 30px;
+
+		.navbar-brand{
+			font-size: 2em;
+		}
 	}
 }
 
+@media screen and (max-width : 767px){
+	// navbar
+	.navbar-default{
+		background-color: rgba(0, 0, 0, 1);
+	}
+	// navbar links container
+	.navbar-default .navbar-collapse{
+		border-color: black;
+	}
+}
+
+// navbar with scroll
 .navbar-default.affix{
 	background-color: rgba(0, 0, 0, 1);
 }
 
+// navbar links
 .navbar-default .nav>li>a{
+	color: white;
 	font-weight: normal;
 }
 
+// navbar links with scroll
 .navbar-default.affix .nav>li>a, .navbar-default.affix .nav>li>a:focus{
 	color: white;
+}
+
+// menu button in small screens
+.navbar-default .navbar-header .navbar-toggle{
+	color: white;
+}
+
+// menu button in small screens
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+	background-color: #111;
 }
 
 // Header
@@ -164,28 +208,34 @@ header{
 
 // Services
 .service-box{
-	margin: 50px auto 0;
+	margin: 50px auto;
 	max-width: 400px;
+
 	@media (min-width: 992px){
+		height: 400px;
 		margin: 20px auto 0;
 	}
-	p{
-		margin-bottom: 0;
-	}
+
 	h3{
 		font-weight: bold;
+	}
+
+	.text-muted{
+		margin-bottom: 0;
+		margin-top: 20px;
+		padding: 0 10px;
 	}
 }
 
 #services-1{
-	padding-bottom: 20px;
+	// padding-bottom: 20px;
 }
 
-#services-2{
-	background-color: white;
-	padding: 0;
-	padding-bottom: 60px;
-}
+// #services-2{
+// 	background-color: white;
+// 	padding: 0;
+// 	padding-bottom: 60px;
+// }
 
 // Our Team
 #our-team{
@@ -195,6 +245,7 @@ header{
 
 	.text{
 		color: #ddd;
+		padding: 0 20px;
 		text-align: justify;
 	}
 }
@@ -248,7 +299,30 @@ header{
 }
 
 // Community
-#community{}
+#community{
+	.text{
+		padding: 0 20px;
+	}
+
+	.icons-container{
+		margin-top: 40px;
+	}
+
+	.icon-item{
+		display: inline-block;
+		margin: 10px 20px;
+	}
+
+	.meetup-icon, .meetup-icon-a{
+		color: #ed1c40;
+		font-weight: bold;
+	}
+
+	.twitter-icon, .twitter-icon-a{
+		color: #1da1f2;
+		font-weight: bold;
+	}
+}
 
 // Contact
 #contact{}
