@@ -1,13 +1,38 @@
 @import 'default.less';
 
-h1, h2, h3, h4, h5, h6, p, img{
+h1, h2, h3, h4, h5, h6, p, img, li{
   cursor: default;
 }
 
 .footer-text{
-  color: @gray-light;
+  color: @gray-base;
+  font-size: 14px;
+  margin: 0;
 
   .fa-heart{
     color: #a21212;
+  }
+}
+
+.portfolio-item-website{
+  color: red !important;
+  text-decoration: underline;
+}
+
+//Extra small devices Phones
+@media screen and (max-width : 767px)
+{
+  header .intro-text .intro-heading{
+    font-size: 45px;
+  }
+  .navbar-custom .navbar-brand{
+    font-size: 30px;
+    position: relative;
+    top: 2px;
+  }
+  .tech-stack{
+    img{
+      width: 40px;
+    }
   }
 }
