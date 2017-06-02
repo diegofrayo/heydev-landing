@@ -1,17 +1,17 @@
-/*!
- * Start Bootstrap - workspace landing page v1.0.0 ()
- * Copyright 2013-2017 Workspace Quindío
- * Licensed under MIT ()
- */
 body {
   overflow-x: hidden;
   font-family: 'Exo', sans-serif;
 }
-.text-muted {
-  color: #777777;
-}
-.text-primary {
-  color: #ffcc66;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+li {
+  cursor: default;
 }
 p {
   font-size: 18px;
@@ -50,10 +50,17 @@ h6 {
   margin: 0 auto;
 }
 .bg-light-gray {
-  background-color: #eeeeee;
+  background-color: #e6e6e6;
 }
 .bg-darkest-gray {
-  background-image: url("../img/bg-patterns/dark.png");
+  background-image: url('../img/bg-patterns/dark-2.png');
+  background-size: 100%;
+}
+.text-muted {
+  color: #777777;
+}
+.text-primary {
+  color: #ffcc66;
 }
 .btn-primary {
   color: white;
@@ -161,7 +168,7 @@ fieldset[disabled] .btn-xl.active {
   color: #ffbb33;
 }
 .navbar-custom .navbar-collapse {
-  border-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(230, 230, 230, 0.02);
 }
 .navbar-custom .navbar-toggle {
   font-family: 'Passion One', cursive;
@@ -169,7 +176,7 @@ fieldset[disabled] .btn-xl.active {
   text-transform: uppercase;
   background-color: transparent;
   border: 0;
-  color: white;
+  color: #e6e6e6;
   font-size: 30px;
   margin-bottom: 0;
   padding: 0;
@@ -225,7 +232,7 @@ fieldset[disabled] .btn-xl.active {
 }
 @media (min-width: 768px) {
   .navbar-custom.affix {
-    background-color: #222222;
+    background-color: #222;
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
@@ -243,7 +250,7 @@ header {
   background-position: center center;
   height: 100vh;
   text-align: center;
-  color: white;
+  color: #e6e6e6;
 }
 header div {
   height: 100%;
@@ -266,12 +273,13 @@ header .intro-text .intro-heading {
   display: table-cell;
   line-height: 50px;
   margin-bottom: 25px;
-  color: white;
+  color: #ffcc66;
   font-size: 60px;
   font-weight: 400;
   text-shadow: 2px 3px 10px #212121;
   cursor: default;
   vertical-align: middle;
+  margin-top: 80px;
 }
 @media (min-width: 768px) {
   header .intro-text {
@@ -363,11 +371,11 @@ section h3.section-subheading {
   margin: 0;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  max-width: 400px;
-  margin: 0 auto;
   background-color: white;
-  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
   padding: 25px;
+  text-align: center;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
@@ -387,11 +395,15 @@ section h3.section-subheading {
     margin: 0 0 30px;
   }
 }
+.portfolio-item-website {
+  color: red !important;
+  text-decoration: underline;
+}
 #team {
   padding-bottom: 20px;
 }
 #team .section-heading {
-  color: #eeeeee;
+  color: #e6e6e6;
 }
 .team-member {
   text-align: center;
@@ -411,10 +423,10 @@ section h3.section-subheading {
 }
 .team-member p {
   margin-top: 0;
-  color: #eeeeee;
+  color: #e6e6e6;
 }
 .tech-stack {
-  background-color: #000;
+  background-color: #222;
   padding: 15px 0;
 }
 .tech-stack img {
@@ -423,7 +435,7 @@ section h3.section-subheading {
   width: 70px;
 }
 section#contact {
-  background-color: #fff;
+  background-color: white;
 }
 section#contact .section-heading {
   color: #333333;
@@ -436,12 +448,12 @@ section#contact .form-group textarea {
   padding: 20px;
 }
 section#contact .form-group input.form-control {
+  background-color: #e6e6e6;
   height: auto;
-  background-color: #eee;
 }
 section#contact .form-group textarea.form-control {
+  background-color: #e6e6e6;
   height: 236px;
-  background-color: #eee;
 }
 section#contact .btn {
   background-color: #ffbb33;
@@ -489,33 +501,26 @@ footer {
   text-align: center;
   background-color: white;
 }
-footer span.copyright {
-  line-height: 40px;
-  font-family: 'Passion One', cursive;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-transform: none;
+footer .footer-text {
+  color: #000;
+  font-size: 14px;
+  margin: 0;
 }
-footer ul.quicklinks {
-  margin-bottom: 0;
-  line-height: 40px;
-  font-family: 'Passion One', cursive;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-transform: none;
+footer .footer-text .fa-heart {
+  color: #a21212;
 }
 ul.social-buttons {
   margin-bottom: 0;
 }
 ul.social-buttons li a {
   display: block;
-  background-color: #333333;
+  background-color: #777777;
   height: 40px;
   width: 40px;
   border-radius: 100%;
   font-size: 20px;
   line-height: 40px;
-  color: white;
+  color: #e6e6e6;
   outline: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -524,7 +529,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-  background-color: #000;
+  background-color: #555555;
 }
 .btn:focus,
 .btn:active,
@@ -622,29 +627,6 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #ffcc66;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-img,
-li {
-  cursor: default;
-}
-.footer-text {
-  color: #000;
-  font-size: 14px;
-  margin: 0;
-}
-.footer-text .fa-heart {
-  color: #a21212;
-}
-.portfolio-item-website {
-  color: red !important;
-  text-decoration: underline;
 }
 @media screen and (max-width: 767px) {
   header .intro-text .intro-heading {
