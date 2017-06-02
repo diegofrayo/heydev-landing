@@ -5,6 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 var less = require('gulp-less');
 var pkg = require('./package.json');
 var rename = require('gulp-rename');
+var runSequence = require('gulp-run-sequence');
 var uglify = require('gulp-uglify');
 
 
@@ -114,4 +115,6 @@ gulp.task('dev', ['browserSync', 'less', 'build-css', 'build-html', 'build-js'],
 
 
 // Build tasks
-gulp.task('build', ['default', 'minify-css', 'minify-js', 'minify-html', 'copy-assets'], function() {});
+gulp.task('prod', function() {
+  runSequence('default', ['minify-css', 'minify-js', 'minify-html', 'copy-assets']);
+});

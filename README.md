@@ -1,10 +1,10 @@
 # Hey Dev! Landing Page
 
-### Comandos básicos
+## Basic commands
 
-- Instalar dependencias `npm i`
-- Activar modo desarrollo: `gulp dev`
-- Construir el proyecto: `gulp`
+- Install dependencies: `npm i`
+- Start dev environment: `gulp dev`
+- Build project to production: `gulp prod`
 
 ________________
 
