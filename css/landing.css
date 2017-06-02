@@ -14,7 +14,7 @@ body {
   color: #ffcc66;
 }
 p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.75;
 }
 p.large {
@@ -54,7 +54,7 @@ h6 {
   background-color: #eeeeee;
 }
 .bg-darkest-gray {
-  background-color: #222222;
+  background-image: url("../img/bg-patterns/dark2.png");
 }
 .btn-primary {
   color: white;
@@ -267,13 +267,14 @@ header .intro-text .intro-heading {
   color: #ffcc66;
   font-size: 60px;
   font-weight: 400;
-  text-shadow: 3px 3px 10px #000000;
+  text-shadow: 2px 3px 10px #212121;
   cursor: default;
 }
 @media (min-width: 768px) {
   header .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
   header .intro-text .intro-lead-in {
     font-family: 'Exo', sans-serif;
@@ -283,12 +284,12 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
   }
   header .intro-text .intro-heading {
+    padding-top: 50px;
     font-family: 'Passion One', cursive;
     font-weight: 400 !important;
     text-transform: uppercase;
-    font-size: 75px;
-    line-height: 75px;
-    margin-bottom: 50px;
+    font-size: 70px;
+    line-height: 70px;
   }
 }
 section {
@@ -393,12 +394,13 @@ section h3.section-subheading {
 }
 .team-member img {
   margin: 0 auto;
-  width: 100px;
+  width: 150px;
 }
 .team-member h4 {
-  color: #000;
-  font-size: 20px;
+  color: #D64937;
+  font-size: 22px;
   margin-bottom: 0;
+  letter-spacing: 2px;
   margin-top: 25px;
   text-transform: none;
 }
@@ -406,7 +408,7 @@ section h3.section-subheading {
   margin-top: 0;
 }
 .tech-stack {
-  margin-top: 30px;
+  background-color: #222;
 }
 .tech-stack img {
   display: inline-block;
@@ -414,7 +416,7 @@ section h3.section-subheading {
   width: 70px;
 }
 section#contact {
-  background-color: black;
+  background-color: #fff;
 }
 section#contact .section-heading {
   color: white;
@@ -428,13 +430,11 @@ section#contact .form-group textarea {
 }
 section#contact .form-group input.form-control {
   height: auto;
-  background-color: #090909;
-  border-color: #090909;
+  background-color: #eee;
 }
 section#contact .form-group textarea.form-control {
   height: 236px;
-  background-color: #090909;
-  border-color: #090909;
+  background-color: #eee;
 }
 section#contact .btn {
   background-color: #ffbb33;
