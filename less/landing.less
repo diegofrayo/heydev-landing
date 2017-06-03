@@ -106,6 +106,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 30px;
     margin-bottom: 0;
     padding: 0;
+    position: relative;
+    top: -1px;
     &:hover,
     &:focus {
       background-color: transparent;
@@ -199,16 +201,16 @@ header {
     }
     .intro-heading {
       .heading-font;
-      display: table-cell;
-      line-height: 50px;
-      margin-bottom: 25px;
       color: @theme-primary;
+      cursor: default;
+      display: table-cell;
       font-size: 60px;
       font-weight: 400;
-      text-shadow: 2px 3px 10px #212121;
-      cursor: default;
-      vertical-align: middle;
+      line-height: 50px;
+      margin-bottom: 25px;
       margin-top: 80px;
+      text-shadow: 2px 3px 10px #212121;
+      vertical-align: middle;
     }
   }
 }
@@ -226,10 +228,10 @@ header {
         margin-bottom: 25px;
       }
       .intro-heading {
-        padding-top: 150px;
         .heading-font;
         font-size: 70px;
         line-height: 70px;
+        padding-top: 150px;
       }
     }
   }
@@ -411,6 +413,8 @@ section#contact {
     textarea.form-control {
       background-color: @gray-lighter;
       height: 236px;
+      max-height: 236px;
+      max-width: 100%;
     }
   }
   .btn{
@@ -461,6 +465,7 @@ footer {
 
     .fa-heart{
       color: #a21212;
+      margin: 0 5px;
     }
   }
 }
@@ -608,6 +613,7 @@ body {
 {
   header .intro-text .intro-heading{
     font-size: 45px;
+    margin-top: 0;
   }
   .navbar-custom .navbar-brand{
     font-size: 30px;

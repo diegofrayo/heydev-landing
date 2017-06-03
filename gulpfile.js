@@ -1,29 +1,19 @@
 var browserSync = require('browser-sync').create();
-var cleanCSS = require('gulp-clean-css');
 var gulp = require('gulp');
+var cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
 var less = require('gulp-less');
-var pkg = require('./package.json');
-var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 var runSequence = require('gulp-run-sequence');
 var uglify = require('gulp-uglify');
+var timestamp = new Date().getTime();
 
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
   return gulp.src(['less/landing.less'])
     .pipe(less())
-    .pipe(gulp.dest('css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-});
-
-
-// build compiled CSS
-gulp.task('build-css', ['less'], function() {
-  return gulp.src(['css/landing.css'])
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('./build/css'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -33,7 +23,7 @@ gulp.task('build-css', ['less'], function() {
 // build JS
 gulp.task('build-js', function() {
   return gulp.src(['js/landing.js'])
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -42,9 +32,8 @@ gulp.task('build-js', function() {
 
 // build HTML
 gulp.task('build-html', function() {
-  return gulp.src('./index-dev.html')
-    .pipe(rename('index.html'))
-    .pipe(gulp.dest('./'))
+  return gulp.src('./index.html')
+    .pipe(gulp.dest('./build'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -72,6 +61,7 @@ gulp.task('minify-js', function() {
 // minify HTML
 gulp.task('minify-html', function() {
   return gulp.src('./index.html')
+    .pipe(replace('[TIMESTAMP]', timestamp))
     .pipe(htmlmin({
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
@@ -90,27 +80,24 @@ gulp.task('copy-assets', function() {
 
 
 // Run everything
-gulp.task('default', ['less', 'build-css', 'build-js', 'build-html']);
+gulp.task('default', ['less', 'build-js', 'build-html']);
 
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: ''
+      baseDir: './build'
     },
   });
 });
 
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'build-css', 'build-html', 'build-js'], function() {
+gulp.task('dev', ['browserSync', 'less', 'build-html', 'build-js', 'copy-assets'], function() {
   gulp.watch('less/*.less', ['less']);
-  gulp.watch('css/*.css', ['build-css']);
   gulp.watch('js/*.js', ['build-js']);
-  // Reloads the browser whenever HTML or JS files change
-  gulp.watch('index-dev.html', ['build-html']);
-  gulp.watch('js/**/*.js', browserSync.reload);
+  gulp.watch('index.html', ['build-html']);
 });
 
 
