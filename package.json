@@ -2,10 +2,11 @@
   "name": "heydev-landing-page",
   "title": "Hey Dev Landing Page",
   "version": "1.0.0",
-  "homepage": "heydev.com",
+  "homepage": "heydev.now.sh",
   "author": "Hey Dev!",
-  "license": {
-    "type": "MIT"
+  "scripts":{
+   "deploy": "now deploy heydev",
+   "start": "gulp dev"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
