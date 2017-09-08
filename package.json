@@ -5,8 +5,9 @@
   "homepage": "heydev.now.sh",
   "author": "Hey Dev!",
   "scripts":{
-   "deploy": "now deploy heydev",
-   "start": "gulp dev"
+   "deploy": "now deploy heydev --public",
+   "start": "gulp dev",
+   "build": "gulp prod"
   },
   "devDependencies": {
     "browser-sync": "^2.13.0",
