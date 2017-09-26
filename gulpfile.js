@@ -11,7 +11,7 @@ var timestamp = new Date().getTime();
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
-  return gulp.src(['less/landing.less'])
+  return gulp.src(['./src/less/landing.less'])
     .pipe(less())
     .pipe(gulp.dest('./heydev/css'))
     .pipe(browserSync.reload({
@@ -22,7 +22,7 @@ gulp.task('less', function() {
 
 // build JS
 gulp.task('build-js', function() {
-  return gulp.src(['js/landing.js'])
+  return gulp.src(['./src/js/landing.js'])
     .pipe(gulp.dest('./heydev/js'))
     .pipe(browserSync.reload({
       stream: true
@@ -32,7 +32,7 @@ gulp.task('build-js', function() {
 
 // build HTML
 gulp.task('build-html', function() {
-  return gulp.src('./index.html')
+  return gulp.src('./src/index.html')
     .pipe(gulp.dest('./heydev'))
     .pipe(browserSync.reload({
       stream: true
@@ -42,7 +42,7 @@ gulp.task('build-html', function() {
 
 // minify CSS
 gulp.task('minify-css', function() {
-  return gulp.src(['css/landing.css'])
+  return gulp.src(['./src/css/landing.css'])
     .pipe(cleanCSS({
       compatibility: 'ie8'
     }))
@@ -52,7 +52,7 @@ gulp.task('minify-css', function() {
 
 // minify JS
 gulp.task('minify-js', function() {
-  return gulp.src(['js/landing.js'])
+  return gulp.src(['./src/js/landing.js'])
     .pipe(uglify())
     .pipe(gulp.dest('./heydev/js'));
 });
@@ -60,7 +60,7 @@ gulp.task('minify-js', function() {
 
 // minify HTML
 gulp.task('minify-html', function() {
-  return gulp.src('./index.html')
+  return gulp.src('./src/index.html')
     .pipe(replace('[TIMESTAMP]', timestamp))
     .pipe(htmlmin({
       collapseBooleanAttributes: true,
@@ -74,8 +74,8 @@ gulp.task('minify-html', function() {
 
 
 gulp.task('copy-assets', function() {
-  gulp.src(['./img/**/*.png', './img/**/*.jpg', './img/**/*.ico', '!./img/backgrounds/original/*', '!./img/bg-patterns/original/*', '!./img/portfolio/original/*', '!./img/team/original/*', '!./img/tech-stack/original/*'])
-    .pipe(gulp.dest('./heydev/img'));
+  gulp.src(['./assets/**/*.png', './assets/**/*.jpg', './assets/**/*.ico', '!./assets/images/backgrounds/original/*', '!./assets/images/bg-patterns/original/*', '!./assets/images/portfolio/original/*', '!./assets/images/team/original/*', '!./assets/images/tech-stack/original/*'])
+    .pipe(gulp.dest('./heydev/assets'));
 });
 
 
@@ -95,9 +95,9 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'less', 'build-html', 'build-js', 'copy-assets'], function() {
-  gulp.watch('less/*.less', ['less']);
-  gulp.watch('js/*.js', ['build-js']);
-  gulp.watch('index.html', ['build-html']);
+  gulp.watch('./src/less/*.less', ['less']);
+  gulp.watch('./src/js/*.js', ['build-js']);
+  gulp.watch('./src/index.html', ['build-html']);
 });
 
 
