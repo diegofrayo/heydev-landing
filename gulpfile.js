@@ -10,7 +10,7 @@ var timestamp = new Date().getTime();
 
 
 // Compile LESS files from /less into /css
-gulp.task('less', function() {
+gulp.task('less', function () {
   return gulp.src(['./src/less/landing.less'])
     .pipe(less())
     .pipe(gulp.dest('./heydev/css'))
@@ -21,7 +21,7 @@ gulp.task('less', function() {
 
 
 // build JS
-gulp.task('build-js', function() {
+gulp.task('build-js', function () {
   return gulp.src(['./src/js/landing.js'])
     .pipe(gulp.dest('./heydev/js'))
     .pipe(browserSync.reload({
@@ -31,7 +31,7 @@ gulp.task('build-js', function() {
 
 
 // build HTML
-gulp.task('build-html', function() {
+gulp.task('build-html', function () {
   return gulp.src('./src/index.html')
     .pipe(gulp.dest('./heydev'))
     .pipe(browserSync.reload({
@@ -41,7 +41,7 @@ gulp.task('build-html', function() {
 
 
 // minify CSS
-gulp.task('minify-css', function() {
+gulp.task('minify-css', function () {
   return gulp.src(['./src/css/landing.css'])
     .pipe(cleanCSS({
       compatibility: 'ie8'
@@ -51,7 +51,7 @@ gulp.task('minify-css', function() {
 
 
 // minify JS
-gulp.task('minify-js', function() {
+gulp.task('minify-js', function () {
   return gulp.src(['./src/js/landing.js'])
     .pipe(uglify())
     .pipe(gulp.dest('./heydev/js'));
@@ -59,7 +59,7 @@ gulp.task('minify-js', function() {
 
 
 // minify HTML
-gulp.task('minify-html', function() {
+gulp.task('minify-html', function () {
   return gulp.src('./src/index.html')
     .pipe(replace('[TIMESTAMP]', timestamp))
     .pipe(htmlmin({
@@ -73,8 +73,18 @@ gulp.task('minify-html', function() {
 });
 
 
-gulp.task('copy-assets', function() {
-  gulp.src(['./assets/**/*.png', './assets/**/*.jpg', './assets/**/*.ico', '!./assets/images/backgrounds/original/*', '!./assets/images/bg-patterns/original/*', '!./assets/images/portfolio/original/*', '!./assets/images/team/original/*', '!./assets/images/tech-stack/original/*'])
+gulp.task('copy-assets', function () {
+  gulp.src([
+      './assets/**/*.ico',
+      './assets/**/*.jpg',
+      './assets/**/*.png',
+      '!./assets/**/*.psd',
+      '!./assets/images/backgrounds/original/*',
+      '!./assets/images/bg-patterns/**/*',
+      '!./assets/images/portfolio/**/*',
+      '!./assets/images/team/original/*',
+      '!./assets/images/tech-stack/original/*'
+    ])
     .pipe(gulp.dest('./heydev/assets'));
 });
 
@@ -84,7 +94,7 @@ gulp.task('default', ['less', 'build-js', 'build-html']);
 
 
 // Configure the browserSync task
-gulp.task('browserSync', function() {
+gulp.task('browserSync', function () {
   browserSync.init({
     server: {
       baseDir: './heydev'
@@ -94,7 +104,7 @@ gulp.task('browserSync', function() {
 
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'build-html', 'build-js', 'copy-assets'], function() {
+gulp.task('dev', ['browserSync', 'less', 'build-html', 'build-js', 'copy-assets'], function () {
   gulp.watch('./src/less/*.less', ['less']);
   gulp.watch('./src/js/*.js', ['build-js']);
   gulp.watch('./src/index.html', ['build-html']);
@@ -102,6 +112,6 @@ gulp.task('dev', ['browserSync', 'less', 'build-html', 'build-js', 'copy-assets'
 
 
 // Build tasks
-gulp.task('prod', function() {
+gulp.task('prod', function () {
   runSequence('default', ['minify-css', 'minify-js', 'minify-html', 'copy-assets']);
 });
