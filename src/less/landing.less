@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, p, img, li{
 p{
   color: @gray-lighter;
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.5em;
   margin: 0 0 10px;
 }
 
@@ -50,14 +50,16 @@ i{
 
 #main-container{
   // background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
   background-attachment: scroll;
   background-image: url('../assets/images/backgrounds/2.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
   justify-content: space-between;
   overflow: auto;
   padding: (@spacing-base * 3) 30px 0;
@@ -117,14 +119,16 @@ header{
   flex-flow: wrap;
   justify-content: center;
   margin-bottom: @spacing-base;
+  width: 100%;
 }
 
 .profile{
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  margin-bottom: 50px;
   margin: 15px;
-  padding: 15px;
+  max-width: 100%;
+  min-width: 250px;
+  padding: 30px 15px;
   text-align: center;
 
   img{
@@ -137,13 +141,13 @@ header{
     font-size: 22px;
     letter-spacing: 2px;
     margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 15px;
     text-transform: none;
   }
 
   p{
     color: @gray-lighter;
-    margin: 0;
+    margin: 15px 0;
   }
 
   .social-buttons{
@@ -162,8 +166,8 @@ header{
         display: block;
         font-size: 20px;
         height: 40px;
-        line-height: 40px;
         outline: none;
+        padding: 5px;
         transition: all 0.3s;
         width: 40px;
 
@@ -177,6 +181,7 @@ header{
 
 #tech-stack{
   margin-bottom: @spacing-base;
+  width: 100%;
 
   p{
     margin: 0;
@@ -190,6 +195,7 @@ header{
 }
 
 footer{
+  padding-bottom: 5px;
   text-align: center;
   width: 100%;
 
